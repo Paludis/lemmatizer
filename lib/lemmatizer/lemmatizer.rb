@@ -73,17 +73,17 @@ module Lemmatizer
       unless pos
         [:verb, :noun, :adj, :adv].each do |p|
           result = lemma(form, p)
-          return result unless result == form
+          return result unless result == nil 
         end
 
-        return form
+        return nil
       end
 
       each_lemma(form, pos) do |x|
         return x
       end
 
-      form
+      return nil
     end
 
     # Print object only on init
